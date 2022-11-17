@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Conversor de moeda </title>
+</head>
+<body>
+    <div class="container">
+        <center><h1 class="page-title">
+        Escolha a moeda e clique em converter
+    </h1>
+    <h2 class="page-subtitle"> Descubra o valor do real em:</h2>
+        </center>
+
+    <center>
+    <input type="radio" name="Dolar" id='option' class= 'optionMoeda' onclick = 'optionDolar()' value= 'Dolar'/> Dolar
+    <input type="radio" name="Euro" id='option' class= 'optionMoeda' onclick = 'optionDolar()' value= 'Euro'/> Euro
+    <input type="radio" name="Peso Argentino" id='option' class= 'optionMoeda' onclick = 'optionDolar()' value= 'Peso Argentino'/> Peso Argentino
+
+    <br></br>
+
+    <input type='text' id='valor' class='valorDolar' placeholder='Digite um valor'/>
+    <input type ='button' id='btn' class = 'btnConversao' onclick = 'conversao();' value = 'Converter'/>
+    <div id="valorReal"></div>
+    <h3>Faça a sua cotação!
+        
+    </h3> </center>
+
+    </div>
+
+    <script>
+        function conversao(){
+            var real = document.getElementById ('valor').value 
+            if (real ==''|| real <= 0){
+                document.getElementById('valorReal').innerHTML = "Digite um valor"
+            }
+
+            else{
+            var dolar = parseFloat(real) *5.40
+            var valorConvertido = dolar.toFixed(2)
+
+            document.getElementById('valorReal').innerHTML = 'O valor convertido é de R$ ' + valorConvertido
+            }
+
+        }
+        
+
+    </script>
+    
+</body>
+</html>
