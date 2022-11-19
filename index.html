@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Conversor de moeda </title>
+    <script type="text/javascript" src="conversor_moeda.js"></script>
+
 </head>
 <body>
     <div class="container">
@@ -15,39 +17,25 @@
         </center>
 
     <center>
-    <input type="radio" name="Dolar" id='option' class= 'optionMoeda' onclick = 'optionDolar()' value= 'Dolar'/> Dolar
-    <input type="radio" name="Euro" id='option' class= 'optionMoeda' onclick = 'optionDolar()' value= 'Euro'/> Euro
-    <input type="radio" name="Peso Argentino" id='option' class= 'optionMoeda' onclick = 'optionDolar()' value= 'Peso Argentino'/> Peso Argentino
+    <input type="radio" id = 'dolar' name='moeda' value= 'Dolar'/> Dolar
+    <input type="radio" id = 'euro' name='moeda' value= 'Euro'/> Euro
+    <input type="radio" id = 'libra' name='moeda' value= 'Libra'/> Libra
+    
 
     <br></br>
 
-    <input type='text' id='valor' class='valorDolar' placeholder='Digite um valor'/>
-    <input type ='button' id='btn' class = 'btnConversao' onclick = 'conversao();' value = 'Converter'/>
+    <input type='text' id='valor' placeholder='Digite um valor'/>
+    <input type ='button' id='btn'onclick = 'conversao();' value = 'Converter'/>
+
     <div id="valorReal"></div>
+
     <h3>Faça a sua cotação!
         
     </h3> </center>
 
     </div>
 
-    <script>
-        function conversao(){
-            var real = document.getElementById ('valor').value 
-            if (real ==''|| real <= 0){
-                document.getElementById('valorReal').innerHTML = "Digite um valor"
-            }
-
-            else{
-            var dolar = parseFloat(real) *5.40
-            var valorConvertido = dolar.toFixed(2)
-
-            document.getElementById('valorReal').innerHTML = 'O valor convertido é de R$ ' + valorConvertido
-            }
-
-        }
-        
-
-    </script>
     
+       
 </body>
 </html>
